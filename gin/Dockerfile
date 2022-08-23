@@ -1,10 +1,9 @@
-FROM golang:1.16.9-alpine3.14
+FROM golang:1.16.0-buster
 
 ENV GOPATH /go
 ENV GO111MODULE on
 
-RUN apk update && \
-    apk --no-cache add git
+RUN apt-get update
 
 WORKDIR /go/src
 COPY go.mod go.sum ./
